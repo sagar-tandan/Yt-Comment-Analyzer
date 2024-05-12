@@ -12,10 +12,10 @@ export default function Home() {
   const [loading, setLoading] = useState("False"); // Add loading state
 
   // let API_KEY = "AIzaSyCqSY3vDMPkjVDbhbHheROw2vrzu7e6Q-w"; //w
-  let API_KEY = process.env.VITE_APP_API_KEY1; //w
-  let API_KEY1 = process.env.VITE_APP_API_KEY2;
-  let API_KEY2 = process.env.VITE_APP_API_KEY3; //o
-  let API_KEY3 = process.env.VITE_APP_API_KEY4;
+  let API_KEY = import.meta.env.VITE_APP_API_KEY1; //w
+  let API_KEY1 = import.meta.env.VITE_APP_API_KEY2;
+  let API_KEY2 = import.meta.env.VITE_APP_API_KEY3; //o
+  let API_KEY3 = import.meta.env.VITE_APP_API_KEY4;
 
   // Function to handle the change event
   const handleYtLinkChange = (e) => {

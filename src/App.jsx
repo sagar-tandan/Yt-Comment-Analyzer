@@ -7,8 +7,8 @@ import Header from "./Youtube/Comps/Header.jsx";
 function App() {
   return (
     <div>
-      <Header/>
-      <Home/>
+      <Header />
+      <Home />
     </div>
   );
 }

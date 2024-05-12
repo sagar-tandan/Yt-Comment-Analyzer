@@ -17,6 +17,9 @@ export default function Home() {
   let API_KEY2 = import.meta.env.VITE_APP_API_KEY3; //o
   let API_KEY3 = import.meta.env.VITE_APP_API_KEY4;
 
+  let regExp =
+    /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+
   // Function to handle the change event
   const handleYtLinkChange = (e) => {
     const newLink = e.target.value;
@@ -29,18 +32,14 @@ export default function Home() {
     }
     setLoading("True");
     try {
-      if (YtLink.startsWith("https://www.youtube.com/")) {
-        // console.log(YtLink);
-        const videoId = YtLink.split("v=")[1];
-        // console.log(videoId);
-        setVideoId(videoId);
-      } else if (YtLink.startsWith("https://youtu.be/")) {
-        const videoId1 = YtLink.split("https://youtu.be/").pop().split("?")[0];
-        // console.log(videoId1);
-        setVideoId(videoId1);
+      let match = YtLink.match(regExp);
+
+      // If the match is found, set the video ID state
+      if (match && match[2].length === 11) {
+        setVideoId(match[2]);
       } else {
+        // Handle invalid YouTube link
         setVideoId("");
-        // console.log("Link not supported!");
         toast.error("Link not Supported!! ", {
           position: "top-center",
           closeOnClick: true,
@@ -49,6 +48,21 @@ export default function Home() {
           autoClose: 4000,
         });
       }
+
+      // if (YtLink.startsWith("https://www.youtube.com/")) {
+      //   // console.log(YtLink);
+      //   const videoId = YtLink.split("v=")[1];
+      //   // console.log(videoId);
+      //   setVideoId(videoId);
+      // } else if (YtLink.startsWith("https://youtu.be/")) {
+      //   const videoId1 = YtLink.split("https://youtu.be/").pop().split("?")[0];
+      //   // console.log(videoId1);
+      //   setVideoId(videoId1);
+      // } else {
+      //   setVideoId("");
+      //   // console.log("Link not supported!");
+        
+      // }
 
       setLoading("False");
     } catch (error) {

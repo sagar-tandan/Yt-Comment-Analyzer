@@ -218,7 +218,7 @@ const VideoInfo = ({ videoId, apiKey, apiKey1, apiKey2, apiKey3 }) => {
     <div>
       <div className="mx-4 my-24 max-w-screen-lg sm:mx-auto ">
         <div className="flex gap-5 md:flex-row flex-col ">
-          <div className="w-[100%] md:w-[75%] flex flex-col items-center ">
+          <div className="w-[100%] md:w-[75%] flex flex-col ">
             <iframe
               className="w-full aspect-video rounded-xl "
               src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1`}

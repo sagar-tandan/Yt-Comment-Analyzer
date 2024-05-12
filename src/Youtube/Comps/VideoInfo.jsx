@@ -273,6 +273,7 @@ const VideoInfo = ({ videoId, apiKey, apiKey1, apiKey2, apiKey3 }) => {
                 apikey={apiKey}
                 channelSub={channelSubO}
                 joyComments ={joyComments.length}
+                neutralComments ={NeutralComments.length}
                 angryComments={angryComments.length}
               />
             </div>
@@ -539,9 +540,9 @@ const VideoInfo = ({ videoId, apiKey, apiKey1, apiKey2, apiKey3 }) => {
                   </div>
                 ) : (
                   <div>
-                    <div className="w-full flex gap-2 my-10">
+                    <div className="w-full flex gap-2 my-10 justify-center items-center">
                       <img className="w-7 h-7" src={noComment} alt="" />
-                      <h1 className="font-SagarFont text-xl font-semibold text-red-500">
+                      <h1 className="font-SagarFont text-md sm:text-xl  font-semibold text-red-500">
                         No Comments Found!!
                       </h1>
                     </div>
@@ -580,9 +581,9 @@ const VideoInfo = ({ videoId, apiKey, apiKey1, apiKey2, apiKey3 }) => {
                   </div>
                 ) : (
                   <div>
-                    <div className="w-full flex gap-2 my-10">
+                    <div className="w-full flex gap-2 my-10 justify-center items-center">
                       <img className="w-7 h-7" src={pos} alt="" />
-                      <h1 className="font-SagarFont text-xl font-semibold text-[#1ca44c]">
+                      <h1 className="font-SagarFont text-md sm:text-xl font-semibold text-[#1ca44c]">
                         No Joy Comments Found!!
                       </h1>
                     </div>
@@ -621,9 +622,9 @@ const VideoInfo = ({ videoId, apiKey, apiKey1, apiKey2, apiKey3 }) => {
                   </div>
                 ) : (
                   <div>
-                    <div className="w-full flex gap-2 my-10">
+                    <div className="w-full flex gap-2 my-10 justify-center items-center">
                       <img className="w-7 h-7" src={sad} alt="" />
-                      <h1 className="font-SagarFont text-xl font-semibold text-[#3b82f6]">
+                      <h1 className="font-SagarFont text-md sm:text-xl font-semibold text-[#3b82f6]">
                         No Sad Comments Found!!
                       </h1>
                     </div>
@@ -662,9 +663,9 @@ const VideoInfo = ({ videoId, apiKey, apiKey1, apiKey2, apiKey3 }) => {
                   </div>
                 ) : (
                   <div>
-                    <div className="w-full flex gap-2 my-10">
+                    <div className="w-full flex gap-2 my-10 justify-center items-center">
                       <img className="w-7 h-7" src={neutral} alt="" />
-                      <h1 className="font-SagarFont text-xl font-semibold text-[#a2a7b0]">
+                      <h1 className="font-SagarFont text-md sm:text-xl font-semibold text-[#a2a7b0]">
                         No Neutral Comments Found!!
                       </h1>
                     </div>
@@ -703,9 +704,9 @@ const VideoInfo = ({ videoId, apiKey, apiKey1, apiKey2, apiKey3 }) => {
                   </div>
                 ) : (
                   <div>
-                    <div className="w-full flex gap-2 my-10">
+                    <div className="w-full flex gap-2 my-10 justify-center items-center">
                       <img className="w-7 h-7" src={confusion} alt="" />
-                      <h1 className="font-SagarFont text-xl font-semibold text-[#f87316]">
+                      <h1 className="font-SagarFont text-md sm:text-xl font-semibold text-[#f87316]">
                         No Inquiry Comments Found!!
                       </h1>
                     </div>
@@ -744,9 +745,9 @@ const VideoInfo = ({ videoId, apiKey, apiKey1, apiKey2, apiKey3 }) => {
                   </div>
                 ) : (
                   <div>
-                    <div className="w-full flex gap-2 my-10">
+                    <div className="w-full flex gap-2 my-10 justify-center items-center">
                       <img className="w-7 h-7" src={angry} alt="" />
-                      <h1 className="font-SagarFont text-xl font-semibold text-[#e04141]">
+                      <h1 className="font-SagarFont text-md sm:text-xl font-semibold text-[#e04141]">
                         No Angry Comments Found!!
                       </h1>
                     </div>

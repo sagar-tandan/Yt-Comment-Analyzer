@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import pos from "../../assets/pos.png";
 import neg from "../../assets/neg.png";
+import neu from "../../assets/neutral.png";
 import ClipLoader from "react-spinners/ClipLoader";
 
 const VideoStat = ({
@@ -11,6 +12,7 @@ const VideoStat = ({
   apiKey,
   channelSub,
   joyComments,
+  neutralComments,
   angryComments,
 }) => {
   const [senti, setSenti] = useState("Positive");
@@ -38,7 +40,9 @@ const VideoStat = ({
 
   const commentSenti = (
     (parseInt(joyComments) /
-      (parseInt(joyComments) + parseInt(angryComments))) *
+      (parseInt(joyComments) +
+        parseInt(neutralComments) +
+        parseInt(angryComments))) *
     100
   ).toFixed(2);
 
@@ -85,7 +89,7 @@ const VideoStat = ({
         </div>
         <div className="flex flex-col justify-center items-center">
           <h1 className="text-[#565656]">Comment Emotion</h1>
-          {commentSenti >= 50 && (
+          {commentSenti > 50 && (
             <div className="flex gap-1 justify-center items-center">
               <span className="font-semibold text-2xl md:text-lg">
                 {commentSenti}%
@@ -100,6 +104,26 @@ const VideoStat = ({
                   text-green-600`}
                 >
                   Positive
+                </h2>
+              </div>
+            </div>
+          )}
+
+          {commentSenti == 50 && (
+            <div className="flex gap-1 justify-center items-center">
+              <span className="font-semibold text-2xl md:text-lg">
+                {commentSenti}%
+              </span>
+              <div
+                className={`flex border-[2px] border-gray-600 p-1 px-3 rounded-full w-full gap-1 justify-center items-center`}
+              >
+                <img className="w-5 h-5" src={neu} alt="" />
+
+                <h2
+                  className={`font-SagarFont font-semibold
+                  text-gray-600`}
+                >
+                  Neutral
                 </h2>
               </div>
             </div>

@@ -14,18 +14,20 @@ export default function () {
           </h1>
         </div>
 
+        <a href="https://github.com/sagar-tandan/Yt-Comment-Analyzer" target="_blank">
         <div className="relative w-6 h-6 md:w-8 md:h-8 group hover:cursor-pointer active:scale-95">
           <img
             className="wfull group-hover:opacity-0 transition-opacity duration-500 ease-in-out"
             src={git}
-            alt=""
+            alt="git"
           />
           <img
             className="absolute top-0 opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100"
             src={git1}
-            alt=""
+            alt="git"
           />
         </div>
+        </a>
       </div>
     </div>
   );

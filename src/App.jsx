@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 // import { VideoItems } from "./Youtube/VideoItems.jsx";
 import Home from "./Youtube/Home.jsx";
-import Header from "./Youtube/Components/Header.jsx";
+import Header from "./Youtube/Comps/Header.jsx";
 
 
 function App() {

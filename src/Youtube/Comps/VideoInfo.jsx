@@ -144,8 +144,8 @@ const VideoInfo = ({ videoId, apiKey, apiKey1, apiKey2, apiKey3 }) => {
       try {
         setLoading("True");
         const response = await fetch(
-          "http://127.0.0.1:8000/sentiment-analysis/",
-          // "https://railway-production-f93f.up.railway.app/sentiment-analysis/",
+          import.meta.env.VITE_APP_MODEL,
+          // "http://127.0.0.1:8000/sentiment-analysis/",
           {
             method: "POST",
             headers: {

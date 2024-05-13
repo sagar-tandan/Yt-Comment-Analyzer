@@ -5,8 +5,8 @@ import arrowBlack from "../../assets/arrowBlack.png";
 const ProjectDetails = () => {
   const [color, setColor] = useState("");
   return (
-    <div className="flex justify-center items-center">
-      <div className="mt-10 flex flex-col md:flex-row-reverse md:gap-2 max-w-screen-lg">
+    <div className="flex justify-center items-center w-full">
+      <div className="mt-10 flex flex-col md:flex-row-reverse md:gap-2 max-w-screen-lg mx-auto">
         <div className="bg-[#f1f6fc] w-full md:w-[40%] mt-5 h-[50%]">
           <div className="flex flex-col w-full">
             <span className="m-3 mt-8 flex justify-center items-center w-[50%] md:w-[70%] bg-red-600 text-white font-SagarFont font-medium text-sm p-2 rounded-full">

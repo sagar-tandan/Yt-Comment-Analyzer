@@ -46,6 +46,22 @@ const VideoStat = ({
     100
   ).toFixed(2);
 
+  const commentSenti1 = (
+    (parseInt(neutralComments) /
+      (parseInt(joyComments) +
+        parseInt(neutralComments) +
+        parseInt(angryComments))) *
+    100
+  ).toFixed(2);
+
+  const commentSenti2 = (
+    (parseInt(angryComments) /
+      (parseInt(joyComments) +
+        parseInt(neutralComments) +
+        parseInt(angryComments))) *
+    100
+  ).toFixed(2);
+
   return (
     <div className="flex flex-col my-3 px-2 gap-10 w-full">
       {/* stats */}
@@ -89,7 +105,7 @@ const VideoStat = ({
         </div>
         <div className="flex flex-col justify-center items-center">
           <h1 className="text-[#565656]">Comment Emotion</h1>
-          {commentSenti > 50 && (
+          {commentSenti > commentSenti1 && commentSenti > commentSenti2 && (
             <div className="flex gap-1 justify-center items-center">
               <span className="font-semibold text-2xl md:text-lg">
                 {commentSenti}%
@@ -109,10 +125,10 @@ const VideoStat = ({
             </div>
           )}
 
-          {commentSenti == 50 && (
+          {commentSenti1 >commentSenti && commentSenti1 > commentSenti2  && (
             <div className="flex gap-1 justify-center items-center">
               <span className="font-semibold text-2xl md:text-lg">
-                {commentSenti}%
+                {commentSenti1}%
               </span>
               <div
                 className={`flex border-[2px] border-gray-600 p-1 px-3 rounded-full w-full gap-1 justify-center items-center`}
@@ -129,10 +145,10 @@ const VideoStat = ({
             </div>
           )}
 
-          {commentSenti < 50 && (
+          {commentSenti2 > commentSenti && commentSenti2 > commentSenti1 && (
             <div className="flex gap-1 justify-center items-center">
               <span className="font-semibold text-2xl md:text-lg">
-                {100 - commentSenti}%
+                {commentSenti2}%
               </span>
               <div
                 className={`flex border-[2px] border-red-600 p-1 px-3 rounded-full w-full gap-1 justify-center items-center`}
@@ -148,7 +164,7 @@ const VideoStat = ({
               </div>
             </div>
           )}
-          {commentSenti == "NaN" && (
+          {commentSenti == "NaN" && commentSenti1 == "NaN" && commentSenti2 == "NaN" && (
             <div className="mt-3">
               <ClipLoader
                 color="red"

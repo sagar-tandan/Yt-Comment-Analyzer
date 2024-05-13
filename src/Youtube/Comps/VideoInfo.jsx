@@ -144,8 +144,8 @@ const VideoInfo = ({ videoId, apiKey, apiKey1, apiKey2, apiKey3 }) => {
       try {
         setLoading("True");
         const response = await fetch(
-          import.meta.env.VITE_APP_MODEL,
-          // "http://127.0.0.1:8000/sentiment-analysis/",
+          // import.meta.env.VITE_APP_MODEL,
+          "http://127.0.0.1:8000/sentiment-analysis/",
           {
             method: "POST",
             headers: {
@@ -406,7 +406,7 @@ const VideoInfo = ({ videoId, apiKey, apiKey1, apiKey2, apiKey3 }) => {
                           </div>
                           <div
                             onClick={() => setClassify("Neutral")}
-                            className={` text-white  px-3 lg:px-5 py-1 sm:py-2 w-full font-SagarFont font-semibold text-sm rounded-md flex justify-center gap-2 lg:gap-2 hover:bg-red-700 active:scale-90 transition-all ease-in-out duration-300 hover:cursor-pointer ${
+                            className={` text-white  px-1 lg:px-5 py-1 sm:py-2 w-full font-SagarFont font-semibold text-sm rounded-md flex justify-center gap-1 lg:gap-2 hover:bg-red-700 active:scale-90 transition-all ease-in-out duration-300 hover:cursor-pointer ${
                               classify == "Neutral"
                                 ? "bg-red-600"
                                 : "bg-zinc-500"
@@ -417,10 +417,10 @@ const VideoInfo = ({ videoId, apiKey, apiKey1, apiKey2, apiKey3 }) => {
                           </div>
                         </div>
 
-                        <div className="flex w-full gap-2  md:gap-1 lg:gap-4">
+                        <div className="flex w-full gap-1 sm:gap-2 md:gap-1 lg:gap-4">
                           <div
                             onClick={() => setClassify("Sad")}
-                            className={` text-white  px-3 lg:px-5 py-1 sm:py-2 w-full font-SagarFont font-semibold text-sm rounded-md flex justify-center gap-2 lg:gap-2 hover:bg-red-700 active:scale-90 transition-all ease-in-out duration-300 hover:cursor-pointer ${
+                            className={` text-white  px-1 lg:px-5 py-1 sm:py-2 w-full font-SagarFont font-semibold text-sm rounded-md flex justify-center gap-1 lg:gap-2 hover:bg-red-700 active:scale-90 transition-all ease-in-out duration-300 hover:cursor-pointer ${
                               classify == "Sad" ? "bg-red-600" : "bg-zinc-500"
                             }`}
                           >
@@ -430,7 +430,7 @@ const VideoInfo = ({ videoId, apiKey, apiKey1, apiKey2, apiKey3 }) => {
 
                           <div
                             onClick={() => setClassify("Inquiry")}
-                            className={` text-white px-3 lg:px-5 py-1 sm:py-2 w-full font-SagarFont font-semibold text-sm rounded-md flex justify-center gap-2 lg:gap-2 hover:bg-red-700 active:scale-90 transition-all ease-in-out duration-300 hover:cursor-pointer ${
+                            className={` text-white px-1 lg:px-5 py-1 sm:py-2 w-full font-SagarFont font-semibold text-sm rounded-md flex justify-center gap-1 lg:gap-2 hover:bg-red-700 active:scale-90 transition-all ease-in-out duration-300 hover:cursor-pointer ${
                               classify == "Inquiry"
                                 ? "bg-red-600"
                                 : "bg-zinc-500"
@@ -441,7 +441,7 @@ const VideoInfo = ({ videoId, apiKey, apiKey1, apiKey2, apiKey3 }) => {
                           </div>
                           <div
                             onClick={() => setClassify("Dissapointed")}
-                            className={` text-white px-3 lg:px-5 py-1 sm:py-2 w-full font-SagarFont font-semibold text-sm rounded-md flex justify-center gap-4 lg:gap-2 hover:bg-red-700 active:scale-90 transition-all ease-in-out duration-300 hover:cursor-pointer ${
+                            className={` text-white px-1 lg:px-5 py-1 sm:py-2 w-full font-SagarFont font-semibold text-sm rounded-md flex justify-center gap-1 lg:gap-2 hover:bg-red-700 active:scale-90 transition-all ease-in-out duration-300 hover:cursor-pointer ${
                               classify == "Dissapointed"
                                 ? "bg-red-600"
                                 : "bg-zinc-500"
@@ -466,8 +466,8 @@ const VideoInfo = ({ videoId, apiKey, apiKey1, apiKey2, apiKey3 }) => {
                     {Emotions.map((Emotions, index) => (
                       <div key={index}>
                         {
-                          <div className="container flex gap-3 items-center my-2 w-full mx-auto ">
-                            <div className="flex gap-2 mt-4 w-full ">
+                          <div className="container flex sm:gap-3 gap-1 justify-between items-center my-2 w-full mx-auto ">
+                            <div className="flex gap-2 mt-4 sm:w-full w-[60%]">
                               <img
                                 className="w-8 h-8 rounded-full"
                                 src={authorImage[index]}
@@ -484,7 +484,7 @@ const VideoInfo = ({ videoId, apiKey, apiKey1, apiKey2, apiKey3 }) => {
                               </div>
                             </div>
 
-                            <div className="w-[45%] sm:w-[25%] mt-3">
+                            <div className="w-[40%] sm:w-[25%] mt-3">
                               <div
                                 className={`flex border-[2px] ${
                                   Emotions.sentiment == "Joy"
@@ -501,7 +501,7 @@ const VideoInfo = ({ videoId, apiKey, apiKey1, apiKey2, apiKey3 }) => {
                                 }  py-2 px-2 sm:px-5 rounded-full w-full gap-1 justify-start items-center`}
                               >
                                 <img
-                                  className="w-5 h-5"
+                                  className="w-4 h-4 sm:w-5 sm:h-5"
                                   src={
                                     Emotions.sentiment == "Joy"
                                       ? pos
@@ -517,7 +517,7 @@ const VideoInfo = ({ videoId, apiKey, apiKey1, apiKey2, apiKey3 }) => {
                                   }
                                   alt=""
                                 />
-                                <h1 className="font-SagarFont font-semibold text-sm">
+                                <h1 className="font-SagarFont font-medium sm:font-semibold text-sm ">
                                   {Emotions.sentiment == "Joy"
                                     ? "Joy"
                                     : Emotions.sentiment == "Disappointment"

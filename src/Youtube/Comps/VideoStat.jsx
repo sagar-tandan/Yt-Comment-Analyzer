@@ -161,7 +161,7 @@ const VideoStat = ({
               </div>
             </div>
           )}
-          {commentSenti == "NaN" && commentSenti1 == "NaN" && commentSenti2 == "NaN" && (
+          {joyComments == "0" && neutralComments == "0" && angryComments == "0" && (
             <div className="mt-3">
               <ClipLoader
                 color="red"

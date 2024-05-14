@@ -766,7 +766,7 @@ const VideoInfo = ({ videoId, apiKey, apiKey1, apiKey2, apiKey3 }) => {
       {showDialog && (
         <div className="w-full">
           <div className="fixed top-0 left-0 w-full h-full bg-stone-600 flex opacity-85 transition-opacity ease-in-out duration-1000"></div>
-          <div className="fixed flex flex-col shadow-lg z-30 bg-white p-3 w-[80%] sm:w-[70%] md:w-[60%] lg:w-[50%] xl:w-[40%] 2xl:w-[30%] 3xl:w-[20%] 4xl:w-[10%] 5xl:w-[5%] sm:left-[15%] md:left-[20%] lg:left-[25%] xl:left-[30%] 2xl:left-[35%] 3xl:left-[40%] 4xl:left-[45%] 5xl:left-[50%] sm:h-[320px] top-[20%] sm:top-[25%] left-[10%] ">
+          <div className="fixed flex flex-col shadow-lg z-30 bg-white p-3 w-[80%] sm:w-[70%] md:w-[60%] lg:w-[50%] xl:w-[40%] 2xl:w-[30%] 3xl:w-[20%] 4xl:w-[10%] 5xl:w-[5%] sm:left-[15%] md:left-[20%] lg:left-[25%] xl:left-[30%] 2xl:left-[35%] 3xl:left-[40%] 4xl:left-[45%] 5xl:left-[50%] sm:h-[350px] top-[20%] sm:top-[25%] left-[10%] ">
             <div className="flex items-center gap-2 justify-between mb-5">
               <h1 className="font-SagarFont font-semibold text-md sm:text-lg">
                 Analyze Comments
@@ -816,7 +816,7 @@ const VideoInfo = ({ videoId, apiKey, apiKey1, apiKey2, apiKey3 }) => {
               </div>
             </div>
 
-            <div className="w-full mt-2 px-1">
+            <div className="w-full mt-2 px-1 font-SagarFont font-medium">
               <p><span className="text-red-500 text-2xl font-SagarFont font-bold">*</span> It takes around 50 seconds to analyze 100 Comments depending upon your network speed. If it takes longer than that, our API server might be down. In that case, try later!<span className="text-red-500 text-2xl font-SagarFont font-bold">*</span></p>
 
             </div>
